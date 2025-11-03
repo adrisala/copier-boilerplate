@@ -1,0 +1,46 @@
+# Copier template configuration
+_min_copier_version: "9.0.0"
+
+# Template settings
+_templates_suffix: .jinja
+_subdirectory: template
+
+# Questions
+project_name:
+  type: str
+  help: What is the name of your project?
+  default: My Django Project
+
+project_slug:
+  type: str
+  help: What is the project slug (used for directory and module names)?
+  default: "{{ project_name.lower().replace(' ', '_').replace('-', '_') }}"
+
+project_short_description:
+  type: str
+  help: A short description of your project
+  default: A Django REST Framework service
+
+author_name:
+  type: str
+  help: Your name (or organization name)
+  default: Your Name
+
+version:
+  type: str
+  help: Initial version number
+  default: "0.1.0"
+
+python_version:
+  type: str
+  help: Python version to use
+  default: "3.12"
+  choices:
+    - "3.10"
+    - "3.11"
+    - "3.12"
+
+django_version:
+  type: str
+  help: Django version
+  default: "5.2"

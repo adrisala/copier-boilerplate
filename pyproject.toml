@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "copier-boilerplate"
+version = "0.1.0"
+description = "Standard boilerplate used to create a new service within the Ansible Automation Platform"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+    {name = "Adrià Sala"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Framework :: Django",
+    "Framework :: Django :: 5.2",
+]
+
+dependencies = [
+    "copier",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "isort",
+    "mypy",
+    "pytest",
+    "ruff",
+]
+
+[project.urls]
+Repository = "https://github.com/adrisala/copier-boilerplate"
+
+[tool.setuptools]
+packages = ["copier_boilerplate"]
+
+[tool.setuptools.package-data]
+"*" = ["*.json", "*.md"]
+
+[tool.black]
+line-length = 120
+target-version = ["py312"]
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 120
+multi_line_output = 3
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "N",  # pep8-naming
+    "UP", # pyupgrade
+]
+ignore = []
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
