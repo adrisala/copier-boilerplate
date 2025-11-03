@@ -43,3 +43,7 @@ django_version:
   type: str
   help: Django version
   default: "5.2"
+
+maintainer_name:
+  type: str
+  help: Maintainer name
