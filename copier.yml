@@ -2,7 +2,6 @@
 _min_copier_version: "9.0.0"
 
 # Template settings
-_templates_suffix: .jinja
 _subdirectory: template
 
 # Questions
